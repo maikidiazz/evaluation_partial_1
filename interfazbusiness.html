@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameTask</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .contenedor {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 45px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            color: #cfd8e3;
+            margin-bottom: 35px;
+        }
+
+        .boton {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 10px;
+            background: #5865f2;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: #7289da;
+            transform: translateY(-2px);
+        }
+
+        .secundario {
+            background: #303846;
+        }
+
+        .secundario:hover {
+            background: #414b5c;
+        }
+
+        .pantalla {
+            display: none;
+        }
+
+        .activa {
+            display: block;
+        }
+
+        .texto {
+            line-height: 1.7;
+            color: #dce3eb;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .emoji {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PÁGINA PRINCIPAL -->
+    <div class="contenedor pantalla activa" id="inicio">
+
+        <div class="emoji">🎮</div>
+
+        <h1>GameTask</h1>
+
+        <p class="subtitulo">
+            Contrata jugadores para completar tus objetivos.
+        </p>
+
+      
+        <a href="indexnegocio.html" class="boton">
+            🎮 Entrar a la plataforma
+        </a>
+
+        <button class="boton secundario" onclick="mostrar('negocio')">
+            💡 ¿De qué trata?
+        </button>
+
+        <button class="boton secundario" onclick="mostrar('funciona')">
+            ⚙️ ¿Cómo funciona?
+        </button>
+
+    </div>
+
+
+    <!-- PÁGINA: DE QUÉ TRATA -->
+    <div class="contenedor pantalla" id="negocio">
+
+        <div class="emoji">💡</div>
+
+        <h1>¿De qué trata?</h1>
+
+        <p class="texto">
+            GameTask es una plataforma que conecta a personas que
+            necesitan ayuda para completar actividades dentro de
+            videojuegos con jugadores capaces de realizar esos servicios.
+        </p>
+
+        <p class="texto">
+            El cliente paga por el servicio y el jugador recibe una parte
+            del pago. La plataforma obtiene ingresos mediante una comisión
+            por cada servicio realizado.
+        </p>
+
+        <button class="boton" onclick="mostrar('inicio')">
+            ← Regresar
+        </button>
+
+    </div>
+
+
+    <!-- PÁGINA: CÓMO FUNCIONA -->
+    <div class="contenedor pantalla" id="funciona">
+
+        <div class="emoji">⚙️</div>
+
+        <h1>¿Cómo funciona?</h1>
+
+        <p class="texto">
+            1. 🎮 El cliente solicita un servicio.
+        </p>
+
+        <p class="texto">
+            2. 🧑‍💻 Un jugador acepta la solicitud.
+        </p>
+
+        <p class="texto">
+            3. 🏆 El jugador realiza la actividad solicitada.
+        </p>
+
+        <p class="texto">
+            4. 💰 Se realiza el pago y la plataforma obtiene una comisión.
+        </p>
+
+        <button class="boton" onclick="mostrar('inicio')">
+            ← Regresar
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function mostrar(pantalla) {
+
+            // Ocultar todas las pantallas
+            document.getElementById("inicio").classList.remove("activa");
+            document.getElementById("negocio").classList.remove("activa");
+            document.getElementById("funciona").classList.remove("activa");
+
+            // Mostrar la pantalla seleccionada
+            document.getElementById(pantalla).classList.add("activa");
+        }
+
+    </script>
+
+</body>
+</html>
